@@ -10,4 +10,43 @@ html,body,p,h1,h2,h3,h4,h5,h6 {
 html,body {
     font-family: 'Inter', sans-serif;
     font-size: 15px;
+    background-color: rgb(175, 200, 223);
+}
+
+
+.event-category-card {
+    margin: 10px auto;
+    position: relative;
+
+    width: 343px;
+    height: 531px;
+    border-radius: 12px;
+}
+
+.event-category-card__info {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    border-radius: 12px;
+
+    padding: 22px 12px 26px;
+
+    background-color: #000;
+    color: #fff;
+}
+
+.event-category-card__title {
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+
+    margin-bottom: 2px;
+}
+
+.event-category-card__subtitle {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.15rem;
 }
