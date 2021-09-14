@@ -10,8 +10,92 @@ html,body,p,h1,h2,h3,h4,h5,h6 {
 html,body {
     font-family: 'Inter', sans-serif;
     font-size: 15px;
-    background-color: rgb(175, 200, 223);
+    /* background-color: rgb(175, 200, 223); */
 }
+
+.container {
+    margin: 0 auto;
+
+    max-width: 700px;
+    width: 90%;
+}
+
+.btn {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    /* margin-bottom: 0.5rem; */
+    padding: 1rem 1.5rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    border: none;
+    width: 100%;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.registration {
+    padding: 50px 0 20px;
+
+    text-align: center;
+}
+
+.registration-form {
+    margin-top: 50px;
+}
+
+.registration-form__input {
+    font-size: 1rem;
+    line-height: 1.5rem;
+
+    margin-bottom: 0.5rem;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    width: 100%;
+
+    background-color: #F7F7F7;
+}
+
+.registration-form__input::placeholder {
+    color: #727272;
+}
+
+.registration-form__sex-choose {
+    margin-top: 1rem;
+}
+
+.registration-form__sex-choose {
+    display: flex;
+}
+
+.registration-form__sex-btn {
+    background-color: #FFEFEA;
+
+    /* color: #C9D9DD; */
+    color: #cd746b;
+}
+
+.registration-form__sex-btn:first-of-type {
+    margin-right: 0.5rem;
+}
+
+.registration-form__sex-btn.active {
+    background-color: #fd5f2f;
+    color: #fff;
+}
+
+.registration-form__sex-btn:hover {
+    cursor: pointer;
+}
+
+.registration__save-btn {
+    background-color: #fd5f2f;
+    color: #fff;
+}
+
+
 
 
 .event-category-card {
