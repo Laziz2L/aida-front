@@ -37,7 +37,7 @@
                 </form>
             </div>
 
-            <button id="save-btn" class="btn registration__save-btn">
+            <button id="save-btn" class="btn registration__save-btn" @click="submit">
                 Сохранить
             </button>
         </div>
@@ -63,27 +63,49 @@ export default {
             if (this.male) this.male = false;
             this.female = !this.female;
         },
+
+        submit() {
+            this.age = parseInt(this.age);
+            alert("name: " + this.name + "\nage: " + this.age + "\nsex: " + (this.male ? "male" : (this.female ? "female" : "")))
+        },
+
+        setMargins() {
+            let screenHeight =
+                window.innerHeight ||
+                document.documentElement.clientHeight ||
+                document.body.clientHeight;
+            // console.log(screenHeight);
+            let saveBtn = document.getElementById("save-btn");
+            let saveBtnHeight = saveBtn.offsetHeight;
+            // console.log(saveBtnHeight);
+
+            let center = document.getElementById("vertical-center");
+            let centerHeight = center.offsetHeight;
+            // console.log(centerHeight);
+
+            // // let centerHeight = 350;
+            // console.log([centerHeight, saveBtnHeight, screenHeight]);
+            if ( ((screenHeight - centerHeight) / 2) > (saveBtnHeight + 20) ) {
+            // if (screenHeight > (centerHeight + saveBtnHeight + 60)) {
+                center.style.marginTop =
+                    (screenHeight - centerHeight) / 2 + "px";
+                saveBtn.style.marginTop =
+                    screenHeight -
+                    (screenHeight - centerHeight) / 2 -
+                    centerHeight -
+                    (saveBtnHeight + 20) +
+                    "px";
+                // saveBtn.style.marginBottom
+            } else {
+                center.style.marginTop = "20px";
+                saveBtn.style.marginTop = "20px";
+            }
+        },
     },
     mounted() {
-        let screenHeight =
-            window.innerHeight ||
-            document.documentElement.clientHeight ||
-            document.body.clientHeight;
-        let saveBtn = document.getElementById("save-btn");
-        let saveBtnHeight = saveBtn.offsetHeight;
-        let center = document.getElementById("vertical-center");
-        // let centerHeight = center.offsetHeight;
-        let centerHeight = 350;
-        console.log([centerHeight, saveBtnHeight, screenHeight]);
-        if (screenHeight > centerHeight + saveBtnHeight + 20) {
-            center.style.marginTop = (screenHeight - centerHeight) / 2 + "px";
-            saveBtn.style.marginTop =
-                screenHeight -
-                (screenHeight - centerHeight) / 2 -
-                centerHeight -
-                (saveBtnHeight + 20) +
-                "px";
-        }
+        this.setMargins();
+
+        window.addEventListener("resize", this.setMargins, true);
     },
 };
 </script>

@@ -35,6 +35,13 @@ html,body {
     cursor: pointer;
 }
 
+
+
+.avatar {
+    width: 8rem;
+    height: 8rem;   
+}
+
 .registration {
     /* padding: 50px 0 20px; */
 
